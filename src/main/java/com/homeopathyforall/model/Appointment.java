@@ -18,7 +18,7 @@ public class Appointment {
     private String id;
     private String patientId;
     private String doctorId;
-
+    private String appointmentTime;
     private String appointmentDate;
     private String status;
 

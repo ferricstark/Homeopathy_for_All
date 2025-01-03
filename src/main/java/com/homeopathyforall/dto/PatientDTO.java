@@ -22,6 +22,16 @@ public class PatientDTO {
     private String lastName;
     private String email;
     private String medicalHistory;
+    private String contactInfo;
 
-
+    public PatientDTO(Patient patient) {
+        this.id = patient.getId();
+        this.username = patient.getUsername();
+        this.password = patient.getPassword();
+        this.firstName = patient.getFirstName();
+        this.lastName = patient.getLastName();
+        this.email = patient.getEmail();
+        this.contactInfo = patient.getContactInfo();
+        this.medicalHistory = patient.getMedicalHistory();
+    }
 }

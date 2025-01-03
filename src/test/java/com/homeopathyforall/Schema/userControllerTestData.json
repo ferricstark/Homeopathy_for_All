@@ -1,0 +1,94 @@
+{
+  "registerPatient": {
+    "request": {
+      "username": "patient1",
+      "password": "password123",
+      "email": "patient1@example.com"
+    },
+    "response": {
+      "status": 201,
+      "message": "Patient registered successfully.",
+      "data": {
+        "username": "patient1",
+        "email": "patient1@example.com"
+      }
+    }
+  },
+  "registerDoctor": {
+    "request": {
+      "username": "doctor1",
+      "password": "password123",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "doctor1@example.com",
+      "specialization": "Cardiology",
+      "yearsOfExperience": "10",
+      "contactInfo": "123-456-7890"
+    },
+    "response": {
+      "status": 201,
+      "message": "Doctor registered successfully.",
+      "data": {
+        "username": "doctor1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "doctor1@example.com",
+        "specialization": "Cardiology",
+        "yearsOfExperience": "10",
+        "contactInfo": "123-456-7890"
+      }
+    }
+  },
+  "patientLogin": {
+    "request": {
+      "username": "patient1",
+      "password": "password123"
+    },
+    "response": {
+      "status": 200,
+      "message": "Patient logged in successfully.",
+      "data": {
+        "username": "patient1",
+        "email": "patient1@example.com"
+      }
+    }
+  },
+  "doctorLogin": {
+    "request": {
+      "username": "doctor1",
+      "password": "password123"
+    },
+    "response": {
+      "status": 200,
+      "message": "Doctor logged in successfully.",
+      "data": {
+        "username": "doctor1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "doctor1@example.com",
+        "specialization": "Cardiology",
+        "yearsOfExperience": "10",
+        "contactInfo": "123-456-7890"
+      }
+    }
+  },
+  "forgotPassword": {
+    "request": {
+      "username": "patient1"
+    },
+    "response": {
+      "status": 200,
+      "message": "Password reset email sent."
+    }
+  },
+  "resetPassword": {
+    "request": {
+      "token": "reset-token",
+      "newPassword": "newpassword123"
+    },
+    "response": {
+      "status": 200,
+      "message": "Password has been reset successfully."
+    }
+  }
+}

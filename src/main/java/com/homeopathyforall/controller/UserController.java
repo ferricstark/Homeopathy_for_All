@@ -33,8 +33,8 @@ public class UserController {
     // Patient Login
     @PostMapping("/login/patient")
     public ResponseEntity<ApiResponse<PatientDTO>> patientLogin(@RequestParam String username, @RequestParam String password) {
-        PatientDTO patientDTO = userService.findByUsername(username);
-        if (patientDTO == null || !userService.verifyPatientPassword(username, password)) {
+        PatientDTO patientDTO = userService.loginPatient(username, password);
+        if (patientDTO == null) {
             return ResponseUtil.error("Invalid username or password", HttpStatus.UNAUTHORIZED);
         }
         return ResponseUtil.success(patientDTO, "Patient logged in successfully.");
@@ -43,8 +43,8 @@ public class UserController {
     // Doctor Login
     @PostMapping("/login/doctor")
     public ResponseEntity<ApiResponse<DoctorDTO>> doctorLogin(@RequestParam String username, @RequestParam String password) {
-        DoctorDTO doctorDTO = userService.findDoctorByUsername(username);
-        if (doctorDTO == null || !userService.verifyDoctorPassword(username, password)) {
+        DoctorDTO doctorDTO = userService.loginDoctor(username, password);
+        if (doctorDTO == null) {
             return ResponseUtil.error("Invalid username or password", HttpStatus.UNAUTHORIZED);
         }
         return ResponseUtil.success(doctorDTO, "Doctor logged in successfully.");

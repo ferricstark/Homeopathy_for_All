@@ -19,5 +19,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
         private String lastName;
         private String email;
         private String medicalHistory;
-
+        private String contactInfo;
     }

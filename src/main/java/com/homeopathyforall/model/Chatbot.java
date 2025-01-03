@@ -22,5 +22,6 @@ public class Chatbot {
     private String timestamp;
 
 
-
+    public Chatbot(String patientId, String doctorId, String question, String response, String string) {
+    }
 }

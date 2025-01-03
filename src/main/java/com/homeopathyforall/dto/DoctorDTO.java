@@ -23,7 +23,18 @@ public class DoctorDTO {
     private String yearsOfExperience ;
     private String contactInfo;
 
-   
+
+    public DoctorDTO(Doctor doctor) {
+        this.id = doctor.getId();
+        this.firstName = doctor.getFirstName();
+        this.lastName = doctor.getLastName();
+        this.email = doctor.getEmail();
+        this.specialization = doctor.getSpecialization();
+        this.username = doctor.getUsername();
+        this.password = doctor.getPassword();
+        this.yearsOfExperience = doctor.getYearsOfExperience();
+        this.contactInfo = doctor.getContactInfo();
+    }
 
 
 }

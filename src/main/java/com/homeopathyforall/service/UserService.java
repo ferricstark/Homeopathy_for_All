@@ -137,13 +137,19 @@ public class UserService {
         return "Password has been reset successfully.";
     }
 
-    public PatientDTO findByUsername(String username) {
-        Optional<Patient> patient = patientRepository.findByUsername(username);
-        return patient.map(PatientDTO::new).orElse(null);
+    public DoctorDTO loginDoctor(String username, String password) {
+        Optional<Doctor> doctor = doctorRepository.findByUsername(username);
+        if (doctor.isPresent() && passwordEncoder.matches(password, doctor.get().getPassword())) {
+            return new DoctorDTO(doctor.get());
+        }
+        return null;
     }
 
-    public DoctorDTO findDoctorByUsername(String username) {
-        Optional<Doctor> doctor = doctorRepository.findByUsername(username);
-        return doctor.map(DoctorDTO::new).orElse(null);
+    public PatientDTO loginPatient(String username, String password) {
+        Optional<Patient> patient = patientRepository.findByUsername(username);
+        if (patient.isPresent() && passwordEncoder.matches(password, patient.get().getPassword())) {
+            return new PatientDTO(patient.get());
+        }
+        return null;
     }
 }

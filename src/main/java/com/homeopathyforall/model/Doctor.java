@@ -17,10 +17,9 @@ public class Doctor {
 
     private String password;
     private String firstName;
-
-
     private String lastName;
     private String email;
     private String specialization;
-
+    private String yearsOfExperience ;
+    private String contactInfo;
 }
